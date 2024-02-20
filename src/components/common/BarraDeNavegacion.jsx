@@ -7,19 +7,17 @@ import { Link, NavLink } from "react-router-dom";
 const BarraDeNavegacion = () => {
   return (
     <header>
-      <Navbar expand="lg" className="bg-body-subtle">
-        <Container className="bg-danger-sublte">
-          <Link className="gradiente">
-              <i className="bi bi-magic"> </i>
-              RECETAS
-            </Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+      <Navbar expand="lg" className="bg-danger-subtle roboto-intermedio">
+        <Container>
+          <Link className="gradiente navbar-brand" to={"/"}>
+            <i className="bi bi-magic"> </i>
+            RECETAS
+          </Link>
+          <Nav className="ms-auto">
+            <NavLink end className="nav-link" to={"/administrar"}>
+              <i className="bi bi-plus-lg"></i> Nueva Receta
+            </NavLink>
+          </Nav>
         </Container>
       </Navbar>
     </header>
