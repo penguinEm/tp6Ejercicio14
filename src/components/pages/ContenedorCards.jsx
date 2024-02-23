@@ -1,16 +1,13 @@
 import React from "react";
 import CardReceta from "./receta/CardReceta";
 
-const ContenedorCards = () => {
+const ContenedorCards = ({recetas}) => {
   return (
     <article className="row justify-content-center justify-content-sm-center justify-content-lg-between justify-content-md-between">
-      <CardReceta></CardReceta>
-      <CardReceta></CardReceta>
-      <CardReceta></CardReceta>
-      <CardReceta></CardReceta>
-      <CardReceta></CardReceta>
-      <CardReceta></CardReceta>
-      <CardReceta></CardReceta>
+      {
+        recetas.map((receta)=> <CardReceta key={receta.id} receta={receta}></CardReceta>)
+      }
+      
     </article>
   );
 };
