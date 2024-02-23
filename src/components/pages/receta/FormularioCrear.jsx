@@ -7,6 +7,7 @@ const FormularioCrear = () => {
         Nueva Receta
       </h1>
       <Form className=" rounded-2 px-lg-5 pt-3">
+        {/* nombreReceta */}
         <Form.Group
           className="mb-3 border border-1 p-1 border-danger-subtle rounded-1"
           controlId="receta"
@@ -14,10 +15,12 @@ const FormularioCrear = () => {
           <Form.Label>Nombre de la Receta*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: Budín de pan"
+            placeholder="Ej: Mazamorra"
             className="color-inputs"
           />
         </Form.Group>
+
+        {/* precio */}
         <Form.Group
           className="mb-3 border border-1 p-1 border-danger-subtle rounded-1"
           controlId="precio"
@@ -25,14 +28,15 @@ const FormularioCrear = () => {
           <Form.Label>Precio*</Form.Label>
           <Form.Control
             type="number"
-            placeholder="Ej: 50"
+            placeholder="Ej: 750"
             className="color-inputs"
           />
         </Form.Group>
 
+        {/* imagen */}
         <Form.Group
           className="mb-3 border border-1 p-1 border-danger-subtle rounded-1"
-          controlId="url"
+          controlId="imagen"
         >
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
@@ -42,33 +46,49 @@ const FormularioCrear = () => {
           />
         </Form.Group>
 
+        {/* descripcion */}
         <Form.Group
           className="mb-3 border border-1 p-1 border-danger-subtle rounded-1"
-          controlId="descripcionBreve"
+          controlId="descripcion"
         >
           <Form.Label>Descripcion*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: Una taza de café suave y aromática"
+            placeholder="Ej: Postre tradicional delicioso"
             className="color-inputs"
           />
         </Form.Group>
 
+        {/* ingredientesPreparacion */}
         <Form.Group
           className="mb-3 border border-1 p-1 border-danger-subtle rounded-1"
-          controlId="descripcionAmplia"
+          controlId="ingredientes"
+        >
+          <Form.Label>Ingredientes*</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            placeholder="2 tazas de pan rallado, 2 tazas de leche, 3 huevos, 1 taza de azúcar, 1 cucharadita de esencia de vainilla, frutas confitadas al gusto"
+            className="formularioTextArea color-inputs resize"
+          />
+        </Form.Group>
+
+        {/* preparacion */}
+        <Form.Group
+          className="mb-3 border border-1 p-1 border-danger-subtle rounded-1"
+          controlId="preparacion"
         >
           <Form.Label>Preparación*</Form.Label>
           <Form.Control
             as="textarea"
             rows={3}
-            placeholder="El café es una bebida aromática y vigorizante que se obtiene de los granos tostados de la planta de café. Su sabor distintivo y su rica historia lo convierten en una de las bebidas más populares y apreciadas en todo el mundo. Al ser versátil, el café se presenta en una amplia variedad de formas, desde el clásico espresso hasta las elaboradas mezclas de cafés gourmet."
+            placeholder="Cocinar el maíz morado con canela y clavos de olor. Agregar azúcar y mezclar. Incorporar frutas picadas. Cocinar a fuego lento hasta obtener una consistencia espesa y deliciosa"
             className="formularioTextArea color-inputs resize"
           />
         </Form.Group>
         <div className="text-end">
           <Button type="submit" variant="danger" className="border-0">
-            Guardar
+            Crear Receta
           </Button>
         </div>
       </Form>

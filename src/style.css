@@ -24,6 +24,10 @@
 .text-gris {
   color: #555555;
 }
+.text-shadow {
+  text-shadow: 5px 5px 5px #dc354672;
+
+}
 .color-inputs::placeholder {
   color: #6c757d;
 }

@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
 
-const ItemTablaReceta = () => {
+const ItemTablaReceta = ({receta}) => {
   return (
     <tr>
       {/* Producto nombre */}
-      <td className="pt-5 text-center opciones-responsive">Mazamorra</td>
+      <td className="pt-5 text-center opciones-responsive">{receta.nombreReceta}</td>
       {/* Precio */}
       <td className="text-center pt-5 opciones-responsive">
         <span>$</span>
-        1000
+        {receta.precio}
       </td>
       {/* Url de la img */}
       <td className="text-center">
         <img
-          src="https://images.pexels.com/photos/5652188/pexels-photo-5652188.jpeg"
-          alt="alt del producto"
+          src={receta.imagen}
+          alt={receta.nombreReceta}
           className="tablaImagenDimensiones img-fluid img-thumbnail"
         />
       </td>
