@@ -1,6 +1,11 @@
 import { Container, Form, Button } from "react-bootstrap";
 
 const FormularioCrear = () => {
+/* 1. VARIABLES GLOBALES ----------------------------------------------------------------------------------------------------- */
+
+/* 2. FUNCIONES ----------------------------------------------------------------------------------------------------- */
+
+/* 3. MAQUETADO Y LOG ----------------------------------------------------------------------------------------------------- */
   return (
     <Container className=" main px-lg-5 py-5 text-intermedio">
       <h1 className="display-1 mx-5 pb-4 border-bottom border-danger-subtle text-titulo">
