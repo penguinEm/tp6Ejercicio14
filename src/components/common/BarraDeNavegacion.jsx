@@ -9,7 +9,7 @@ const BarraDeNavegacion = () => {
     <header>
       <Navbar expand="lg" className="bg-danger-subtle roboto-intermedio">
         <Container>
-          <Link className="gradiente navbar-brand" to={"/"}>
+          <Link className="gradiente navbar-brand " to={"/"}>
             <i className="bi bi-magic"> </i>
             RECETAS
           </Link>
