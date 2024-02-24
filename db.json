@@ -53,6 +53,15 @@
       "imagen": "url_helado_vainilla",
       "descripcion": "Clásico y refrescante",
       "id": "6"
+    },
+    {
+      "id": "bbb2",
+      "nombreReceta": "11111",
+      "precio": "1111",
+      "imagen": "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg",
+      "descripcion": "aaaaaaa",
+      "ingredientes": "aaaaaaaaaaaaaaaaa",
+      "preparacion": "aaaaaaaaaaaaaaaaaa"
     }
   ]
 }

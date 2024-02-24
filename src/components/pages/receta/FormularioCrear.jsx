@@ -1,5 +1,7 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearRecetaAPI } from "../../../helpers/queries";
+import Swal from "sweetalert2";
 
 const FormularioCrear = () => {
   /* 1. VARIABLES GLOBALES ----------------------------------------------------------------------------------------------------- */
@@ -10,8 +12,22 @@ const FormularioCrear = () => {
     formState: { errors },
   } = useForm();
 
-  const recetaValida = (receta) => {
-    console.log(receta);
+  const recetaValida = async (receta) => {
+    const crearReceta = await crearRecetaAPI(receta);
+    if (crearReceta.status === 201) {
+      Swal.fire({
+        title: "Buen trabajo!",
+        text: `Su ${receta.nombreReceta} ha sido añadida al inicio`,
+        icon: "success",
+      });
+    } else {
+      Swal.fire({
+        title: "Ops!",
+        text: `Se produjo un error intente mas tarde`,
+        icon: "error",
+      });
+    }
+    reset();
   };
 
   /* 2. FUNCIONES ----------------------------------------------------------------------------------------------------- */
