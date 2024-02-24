@@ -27,3 +27,16 @@ export const crearRecetaAPI = async (nuevaReceta) => {
     console.log(error);
   }
 };
+
+/* DELETE - para borrar una receta del db.json a traves de su id */
+
+export const borrarRecetaApi = async (id) => {
+  try {
+    const respuesta = await fetch(`${URI_RECETAS}/${id}`, {
+      method: "DELETE",
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};

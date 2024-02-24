@@ -1,15 +1,6 @@
 {
   "recetas": [
     {
-      "nombreReceta": "Mazamorra",
-      "precio": "750",
-      "ingredientes": "1 taza de maíz morado, 1 ramita de canela, 5 clavos de olor, 1 taza de azúcar, 1 taza de piña picada, 1 taza de membrillo picado, 1 taza de guayaba picada, 1 taza de manzana picada, 1 taza de uvas pasas",
-      "preparacion": "Cocinar el maíz morado con canela y clavos de olor. Agregar azúcar y mezclar. Incorporar frutas picadas. Cocinar a fuego lento hasta obtener una consistencia espesa y deliciosa.",
-      "imagen": "url_mazamorra",
-      "descripcion": "Postre tradicional",
-      "id": "1"
-    },
-    {
       "nombreReceta": "Budin de pan",
       "precio": "750",
       "ingredientes": "2 tazas de pan rallado, 2 tazas de leche, 3 huevos, 1 taza de azúcar, 1 cucharadita de esencia de vainilla, frutas confitadas al gusto",
@@ -53,24 +44,6 @@
       "imagen": "url_helado_vainilla",
       "descripcion": "Clásico y refrescante",
       "id": "6"
-    },
-    {
-      "id": "bbb2",
-      "nombreReceta": "11111",
-      "precio": "1111",
-      "imagen": "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg",
-      "descripcion": "aaaaaaa",
-      "ingredientes": "aaaaaaaaaaaaaaaaa",
-      "preparacion": "aaaaaaaaaaaaaaaaaa"
-    },
-    {
-      "id": "3f3e",
-      "nombreReceta": "Arroz",
-      "precio": "800",
-      "imagen": "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg",
-      "descripcion": "111",
-      "ingredientes": "11111111111111",
-      "preparacion": "11111111111"
     }
   ]
 }
