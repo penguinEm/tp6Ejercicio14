@@ -44,6 +44,15 @@
       "imagen": "url_helado_vainilla",
       "descripcion": "Clásico y refrescante",
       "id": "6"
+    },
+    {
+      "id": "95b5",
+      "nombreReceta": "Mazamorra",
+      "precio": "750",
+      "imagen": "https://www.alqueria.com.co/sites/default/files/2023-11/MAZAMORRA%20TROPICAL.jpg",
+      "descripcion": "Postre tradicional casero",
+      "ingredientes": "1 taza de maíz morado, 1 ramita de canela, 5 clavos de olor, 1 taza de azúcar, 1 taza de piña picada, 1 taza de membrillo picado, 1 taza de guayaba picada, 1 taza de manzana picada, 1 taza de uvas pasas.",
+      "preparacion": "Cocinar el maíz morado con canela y clavos de olor. Agregar azúcar y mezclar. Incorporar frutas picadas. Cocinar a fuego lento hasta obtener una consistencia espesa y deliciosa."
     }
   ]
 }

@@ -21,13 +21,13 @@ const ItemTablaReceta = ({ receta, setRecetas }) => {
       if (result.isConfirmed) {
         const respuesta = await borrarRecetaApi(receta.id);
         if (respuesta.status === 200) {
+          const recetasActualizadas = await obtenerRecetas();
+          setRecetas(recetasActualizadas);
           Swal.fire({
             title: "Borrado!",
             text: `Su receta: ${receta.nombreReceta} ha sido borrada!`,
             icon: "success",
           });
-          const recetasActualizadas = await obtenerRecetas();
-          setRecetas(recetasActualizadas);
         } else {
           Swal.fire({
             title: "Ops!",

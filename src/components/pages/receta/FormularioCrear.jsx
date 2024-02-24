@@ -17,7 +17,7 @@ const FormularioCrear = () => {
     if (crearReceta.status === 201) {
       Swal.fire({
         title: "Buen trabajo!",
-        text: `Su ${receta.nombreReceta} ha sido añadida al inicio`,
+        text: `Su receta: ${receta.nombreReceta} ha sido añadida al inicio`,
         icon: "success",
       });
     } else {
