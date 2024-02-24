@@ -62,6 +62,15 @@
       "descripcion": "aaaaaaa",
       "ingredientes": "aaaaaaaaaaaaaaaaa",
       "preparacion": "aaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "3f3e",
+      "nombreReceta": "Arroz",
+      "precio": "800",
+      "imagen": "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg",
+      "descripcion": "111",
+      "ingredientes": "11111111111111",
+      "preparacion": "11111111111"
     }
   ]
 }
