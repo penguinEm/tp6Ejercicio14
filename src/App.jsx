@@ -24,6 +24,7 @@ function App() {
           element={
             <FormularioCrear
               titulo="Nueva Receta"
+              textoBoton="Crear Receta"
               crear={true}
             ></FormularioCrear>
           }
@@ -35,12 +36,13 @@ function App() {
             <FormularioCrear
               titulo="Editar receta"
               crear={false}
+              textoBoton="Editar Receta"
             ></FormularioCrear>
           }
         ></Route>
         <Route
           exact
-          path="/detalleReceta"
+          path="/detalleReceta/:id"
           element={<DetalleReceta></DetalleReceta>}
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>

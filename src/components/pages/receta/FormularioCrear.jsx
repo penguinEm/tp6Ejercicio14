@@ -1,11 +1,15 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearRecetaAPI, obtenerReceta } from "../../../helpers/queries";
+import {
+  crearRecetaAPI,
+  editarRecetaApi,
+  obtenerReceta,
+} from "../../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const FormularioCrear = ({ crear, titulo }) => {
+const FormularioCrear = ({ crear, titulo, textoBoton }) => {
   /* 1. VARIABLES GLOBALES ----------------------------------------------------------------------------------------------------- */
   const {
     register,
@@ -14,13 +18,28 @@ const FormularioCrear = ({ crear, titulo }) => {
     setValue,
     formState: { errors },
   } = useForm();
-
   const { id } = useParams();
+  const redireccionar = useNavigate();
 
   /* 2. FUNCIONES ----------------------------------------------------------------------------------------------------- */
   const recetaValida = async (receta) => {
     if (crear === false) {
       /* Logica para edit */
+      const respuesta = await editarRecetaApi(id, receta);
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: `Buen trabajo!`,
+          text: `Su receta: ${receta.nombreReceta} ha sido editada correctamente`,
+          icon: "success",
+        });
+        redireccionar("/administrar");
+      } else {
+        Swal.fire({
+          title: "Ops!",
+          text: `Se produjo un error intente editar su receta mas tarde`,
+          icon: "error",
+        });
+      }
     } else {
       /* Logica para crear */
       const crearReceta = await crearRecetaAPI(receta);
@@ -33,7 +52,7 @@ const FormularioCrear = ({ crear, titulo }) => {
       } else {
         Swal.fire({
           title: "Ops!",
-          text: `Se produjo un error intente mas tarde`,
+          text: `Se produjo un error intente añadir su receta mas tarde`,
           icon: "error",
         });
       }
@@ -48,8 +67,9 @@ const FormularioCrear = ({ crear, titulo }) => {
   }, []);
 
   const cargarFormularioEditar = async () => {
-    const objetoReceta = await obtenerReceta(id);
-    if (objetoReceta.id === id) {
+    const respuesta = await obtenerReceta(id);
+    if (respuesta.status === 200) {
+      const objetoReceta = await respuesta.json();
       setValue("nombreReceta", objetoReceta.nombreReceta);
       setValue("precio", objetoReceta.precio);
       setValue("imagen", objetoReceta.imagen);
@@ -174,9 +194,9 @@ const FormularioCrear = ({ crear, titulo }) => {
                   "Debe ingresar como mínimo 3 caracteres para la descripcion breve",
               },
               maxLength: {
-                value: 30,
+                value: 50,
                 message:
-                  "Debe ingresar como máximo 30 caracteres para la descripcion breve",
+                  "Debe ingresar como máximo 50 caracteres para la descripcion breve",
               },
             })}
           />
@@ -246,7 +266,7 @@ const FormularioCrear = ({ crear, titulo }) => {
         </Form.Group>
         <div className="text-end">
           <Button type="submit" variant="danger" className="border-0">
-            Crear Receta
+            {textoBoton}
           </Button>
         </div>
       </Form>

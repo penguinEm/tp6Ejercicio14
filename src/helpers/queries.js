@@ -11,12 +11,11 @@ export const obtenerRecetas = async () => {
   }
 };
 
-/* GET de para traer 1 receta de la api */
+/* GET de para traer 1 - receta de la api */
 export const obtenerReceta = async (id) => {
   try {
     const respuesta = await fetch(`${URI_RECETAS}/${id}`);
-    const objetoReceta = await respuesta.json();
-    return objetoReceta;
+    return respuesta;
   } catch (error) {
     console.log(error);
   }
@@ -45,6 +44,22 @@ export const borrarRecetaApi = async (id) => {
   try {
     const respuesta = await fetch(`${URI_RECETAS}/${id}`, {
       method: "DELETE",
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/* PUT - para editar una receta a traves de su id */
+export const editarRecetaApi = async (id, receta) => {
+  try {
+    const respuesta = await fetch(`${URI_RECETAS}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(receta),
     });
     return respuesta;
   } catch (error) {

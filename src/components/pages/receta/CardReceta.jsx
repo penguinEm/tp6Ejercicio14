@@ -9,7 +9,7 @@ const CardReceta = ({ receta }) => {
         variant="top"
         alt={receta.nombreReceta}
         src={receta.imagen}
-        className="img-fluid cardImgDimensiones"
+        className="img-fluid cardImgDimensiones imgDetalle"
       />
       <Card.Body>
         <Card.Title className="text-intermedio text-grisOscuro ms-2">
@@ -26,7 +26,7 @@ const CardReceta = ({ receta }) => {
         </Card.Text>
       </Card.Body>
       <Card.Footer className="text-end">
-        <Link className="border-0 btn btn-danger" to="/detalleReceta">
+        <Link className="border-0 btn btn-danger" to={`/detalleReceta/${receta.id}`}>
           Ver más
         </Link>
       </Card.Footer>

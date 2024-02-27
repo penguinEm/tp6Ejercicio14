@@ -25,7 +25,7 @@
   color: #555555;
 }
 .text-shadow {
-  text-shadow: 5px 5px 5px #dc354672;
+  text-shadow: 5px 5px 5px #dc35466e;
 }
 .color-inputs::placeholder {
   color: #6c757d;
@@ -208,4 +208,10 @@
   .cardDimensiones {
     width: 85%;
   }
+}
+
+@media all and (max-width: 361px) {
+ .botonResponsive {
+  margin-bottom: 10px;
+ }
 }
