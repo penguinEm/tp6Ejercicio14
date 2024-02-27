@@ -16,9 +16,6 @@ const CardReceta = ({ receta }) => {
           {receta.nombreReceta}
         </Card.Title>
         <Card.Text className="cardScroll text-parrafo fw-bolder">
-          <span className="text-danger text-decoration-underline">
-            Descripción
-          </span>{" "}
           {receta.descripcion}
         </Card.Text>
         <Card.Text className="fw-bold text-parrafo py-0">

@@ -5,7 +5,7 @@ import Inicio from "./components/pages/Inicio";
 import AdministrarRecetas from "./components/pages/AdministrarRecetas";
 import FormularioCrear from "./components/pages/receta/FormularioCrear";
 import DetalleReceta from "./components/pages/receta/DetalleReceta";
-import Error404 from "./components/pages/Error404"
+import Error404 from "./components/pages/Error404";
 
 function App() {
   return (
@@ -21,9 +21,28 @@ function App() {
         <Route
           exact
           path="/crearReceta"
-          element={<FormularioCrear></FormularioCrear>}
+          element={
+            <FormularioCrear
+              titulo="Nueva Receta"
+              crear={true}
+            ></FormularioCrear>
+          }
         ></Route>
-        <Route exact path="/detalleReceta" element={<DetalleReceta></DetalleReceta>}></Route>
+        <Route
+          exact
+          path="/editarReceta/:id"
+          element={
+            <FormularioCrear
+              titulo="Editar receta"
+              crear={false}
+            ></FormularioCrear>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/detalleReceta"
+          element={<DetalleReceta></DetalleReceta>}
+        ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>

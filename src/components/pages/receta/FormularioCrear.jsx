@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { crearRecetaAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 
-const FormularioCrear = () => {
+const FormularioCrear = ({ crear, titulo }) => {
   /* 1. VARIABLES GLOBALES ----------------------------------------------------------------------------------------------------- */
   const {
     register,
@@ -13,21 +13,27 @@ const FormularioCrear = () => {
   } = useForm();
 
   const recetaValida = async (receta) => {
-    const crearReceta = await crearRecetaAPI(receta);
-    if (crearReceta.status === 201) {
-      Swal.fire({
-        title: "Buen trabajo!",
-        text: `Su receta: ${receta.nombreReceta} ha sido añadida al inicio`,
-        icon: "success",
-      });
+    if (crear === false) {
+      /* Logica para edit */
+      
     } else {
-      Swal.fire({
-        title: "Ops!",
-        text: `Se produjo un error intente mas tarde`,
-        icon: "error",
-      });
+      /* Logica para crear */
+      const crearReceta = await crearRecetaAPI(receta);
+      if (crearReceta.status === 201) {
+        Swal.fire({
+          title: "Buen trabajo!",
+          text: `Su receta: ${receta.nombreReceta} ha sido añadida al inicio`,
+          icon: "success",
+        });
+      } else {
+        Swal.fire({
+          title: "Ops!",
+          text: `Se produjo un error intente mas tarde`,
+          icon: "error",
+        });
+      }
+      reset();
     }
-    reset();
   };
 
   /* 2. FUNCIONES ----------------------------------------------------------------------------------------------------- */
@@ -36,7 +42,7 @@ const FormularioCrear = () => {
   return (
     <Container className=" main px-lg-5 py-5 text-intermedio">
       <h1 className="display-1 mx-5 pb-4 border-bottom border-danger-subtle text-titulo">
-        Nueva Receta
+        {titulo}
       </h1>
       <Form
         className=" rounded-2 px-lg-5 pt-3"
@@ -161,7 +167,7 @@ const FormularioCrear = () => {
           <Form.Control
             as="textarea"
             rows={3}
-            placeholder="2 tazas de pan rallado, 2 tazas de leche, 3 huevos, 1 taza de azúcar, 1 cucharadita de esencia de vainilla, frutas confitadas al gusto"
+            placeholder="Ej: 2 tazas de pan rallado, 2 tazas de leche, 3 huevos, 1 taza de azúcar, 1 cucharadita de esencia de vainilla, frutas confitadas al gusto"
             className="formularioTextArea color-inputs resize"
             {...register("ingredientes", {
               required: "Detallar los ingredientes es obligatorio",
@@ -191,7 +197,7 @@ const FormularioCrear = () => {
           <Form.Control
             as="textarea"
             rows={3}
-            placeholder="Cocinar el maíz morado con canela y clavos de olor. Agregar azúcar y mezclar. Incorporar frutas picadas. Cocinar a fuego lento hasta obtener una consistencia espesa y deliciosa"
+            placeholder="Ej: Cocinar el maíz morado con canela y clavos de olor. Agregar azúcar y mezclar. Incorporar frutas picadas. Cocinar a fuego lento hasta obtener una consistencia espesa y deliciosa"
             className="formularioTextArea color-inputs resize"
             {...register("preparacion", {
               required: "Detallar los pasos de la preparación es obligatorio",

@@ -1,6 +1,7 @@
 import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { borrarRecetaApi, obtenerRecetas } from "../../../helpers/queries";
+import { Link } from "react-router-dom";
 
 const ItemTablaReceta = ({ receta, setRecetas }) => {
   /* VARIABLES GLOBALES ------------------------------------------------------------------ */
@@ -60,9 +61,12 @@ const ItemTablaReceta = ({ receta, setRecetas }) => {
       </td>
       {/* Opciones */}
       <td className="text-center pt-5 opciones-responsive">
-        <Button className="me-1" variant="warning">
+        <Link
+          className="me-1 btn btn-warning"
+          to={`/editarReceta/${receta.id}`}
+        >
           <i className="bi bi-pencil-square"></i>
-        </Button>
+        </Link>
         <Button variant="danger" onClick={borrarReceta}>
           <i className="bi bi-trash"></i>
         </Button>
