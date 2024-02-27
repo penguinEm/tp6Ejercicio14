@@ -114,7 +114,7 @@
 
 .cardScroll {
   overflow-y: auto;
-  height: 20px;
+  max-height: 20px;
 }
 
 .cardImgDimensiones {

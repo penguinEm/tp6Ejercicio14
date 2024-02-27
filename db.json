@@ -53,6 +53,15 @@
       "descripcion": "Postre tradicional casero",
       "ingredientes": "1 taza de maíz morado, 1 ramita de canela, 5 clavos de olor, 1 taza de azúcar, 1 taza de piña picada, 1 taza de membrillo picado, 1 taza de guayaba picada, 1 taza de manzana picada, 1 taza de uvas pasas.",
       "preparacion": "Cocinar el maíz morado con canela y clavos de olor. Agregar azúcar y mezclar. Incorporar frutas picadas. Cocinar a fuego lento hasta obtener una consistencia espesa y deliciosa."
+    },
+    {
+      "nombreReceta": "Chocotorta",
+      "precio": "100",
+      "imagen": "https://assets.elgourmet.com/wp-content/uploads/2023/03/cover_4yvfx2egmj_chocotortajpg.jpg",
+      "descripcion": "Irresistible postre de chocolate",
+      "ingredientes": "2 paquetes de galletas Chocolinas, 500g de queso crema, 1 taza de leche, 200g de chocolate amargo, 1 taza de azúcar, 1 taza de café, cacao en polvo para espolvorear",
+      "preparacion": "1. Preparar el café y dejar enfriar. 2. Triturar las galletas Chocolinas. 3. Derretir el chocolate amargo. 4. Mezclar el queso crema con la leche y el azúcar. 5. Armar capas alternando galletas mojadas en café, mezcla de queso y chocolate derretido. 6. Repetir las capas. 7. Refrigerar durante al menos 4 horas. 8. Espolvorear cacao en polvo antes de servir.",
+      "id": "934c"
     }
   ]
 }

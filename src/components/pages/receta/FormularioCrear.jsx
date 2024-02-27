@@ -194,9 +194,9 @@ const FormularioCrear = ({ crear, titulo, textoBoton }) => {
                   "Debe ingresar como mínimo 3 caracteres para la descripcion breve",
               },
               maxLength: {
-                value: 50,
+                value: 35,
                 message:
-                  "Debe ingresar como máximo 50 caracteres para la descripcion breve",
+                  "Debe ingresar como máximo 35 caracteres para la descripcion breve",
               },
             })}
           />
