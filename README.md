@@ -32,12 +32,6 @@ Este proyecto es una aplicación web desarrollada con React que permite realizar
 
 https://tp6ejercicio14.netlify.app/
 
-- **Variable de entorno (.env)**
-
-```
-VITE_API_PRODUCTOS=http://localhost:3000/recetas
-```
-
 - **Levantar la fake api**
 
 ```dotnetcli
