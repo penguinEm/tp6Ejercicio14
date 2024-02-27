@@ -1,7 +1,9 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearRecetaAPI } from "../../../helpers/queries";
+import { crearRecetaAPI, obtenerReceta } from "../../../helpers/queries";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const FormularioCrear = ({ crear, titulo }) => {
   /* 1. VARIABLES GLOBALES ----------------------------------------------------------------------------------------------------- */
@@ -9,13 +11,16 @@ const FormularioCrear = ({ crear, titulo }) => {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm();
 
+  const { id } = useParams();
+
+  /* 2. FUNCIONES ----------------------------------------------------------------------------------------------------- */
   const recetaValida = async (receta) => {
     if (crear === false) {
       /* Logica para edit */
-      
     } else {
       /* Logica para crear */
       const crearReceta = await crearRecetaAPI(receta);
@@ -36,7 +41,29 @@ const FormularioCrear = ({ crear, titulo }) => {
     }
   };
 
-  /* 2. FUNCIONES ----------------------------------------------------------------------------------------------------- */
+  useEffect(() => {
+    if (crear === false) {
+      cargarFormularioEditar();
+    }
+  }, []);
+
+  const cargarFormularioEditar = async () => {
+    const objetoReceta = await obtenerReceta(id);
+    if (objetoReceta.id === id) {
+      setValue("nombreReceta", objetoReceta.nombreReceta);
+      setValue("precio", objetoReceta.precio);
+      setValue("imagen", objetoReceta.imagen);
+      setValue("descripcion", objetoReceta.descripcion);
+      setValue("ingredientes", objetoReceta.ingredientes);
+      setValue("preparacion", objetoReceta.preparacion);
+    } else {
+      Swal.fire({
+        title: "Ops!",
+        text: `Se produjo un error intente editar mas tarde`,
+        icon: "error",
+      });
+    }
+  };
 
   /* 3. MAQUETADO Y LOG ----------------------------------------------------------------------------------------------------- */
   return (

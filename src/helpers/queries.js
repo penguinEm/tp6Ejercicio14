@@ -11,6 +11,17 @@ export const obtenerRecetas = async () => {
   }
 };
 
+/* GET de para traer 1 receta de la api */
+export const obtenerReceta = async (id) => {
+  try {
+    const respuesta = await fetch(`${URI_RECETAS}/${id}`);
+    const objetoReceta = await respuesta.json();
+    return objetoReceta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 /* POST - para crear una nueva receta y mandarla a db.json */
 
 export const crearRecetaAPI = async (nuevaReceta) => {
